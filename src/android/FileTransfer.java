@@ -266,8 +266,6 @@ public class FileTransfer extends CordovaPlugin {
      * @return FileUploadResult containing result of upload request
      */
     private void upload(final String source, final String target, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        LOG.d(LOG_TAG, "upload " + source + " to " +  target);
-
         // Setup the options
         final String fileKey = getArgument(args, 2, "file");
         final String fileName = getArgument(args, 3, "image.jpg");
