@@ -609,8 +609,6 @@ public class FileTransfer extends CordovaPlugin {
         try {
             error = new JSONObject();
             error.put("code", errorCode);
-            error.put("source", source);
-            error.put("target", target);
             if(body != null)
             {
                 error.put("body", body);
