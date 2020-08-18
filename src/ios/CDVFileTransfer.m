@@ -653,6 +653,10 @@ static CFIndex WriteDataToStream(NSData* data, CFWriteStreamRef stream)
 
     // remove connection for activeTransfers
     @synchronized (command.activeTransfers) {
+        // clear request cache
+        CDVFileTransferDelegate* currentDelegate = command.activeTransfers[objectId];
+        [[NSURLCache sharedURLCache] removeCachedResponseForRequest:currentDelegate.connection.currentRequest];
+
         [command.activeTransfers removeObjectForKey:objectId];
         // remove background id task in case our upload was done in the background
         [[UIApplication sharedApplication] endBackgroundTask:self.backgroundTaskID];
