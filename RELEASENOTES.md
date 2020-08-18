@@ -19,6 +19,11 @@
 #
 -->
 # Release Notes
+
+### 1.8.0 (Aug 18, 2020)
+* (ios) - remove request cache to reduce memory usage when performing many requests
+* (ios) - remove uiwebview useragent references, replace with check for wkwebview useragent. Fixes ios 6.0.0 platform compatibility
+* (android) - reduce log volume, large data in logs could cause out of memory errors
                                               
 ### 1.7.1 (Jan 24, 2018)
 * [CB-13749](https://issues.apache.org/jira/browse/CB-13749) Add build-tools-26.0.2 to travis
